@@ -2,7 +2,7 @@
 
 Getting Folder's children with attributes: Node.js (libuv) function fs.readdir(path[, options], callback) returns parent folder's children names/paths without attributes.
 
-Since native Windows Functions `FindFirstFileExW` and `FindNextFileW` return `WIN32_FIND_DATAW wfd` we developed a little C++ addon returning the children's paths and also attributes as JSON Array.
+Since native Windows Functions `FindFirstFileExW` and `FindNextFileW` return `WIN32_FIND_DATAW wfd` we developed a small C++ addon returning the children's paths and also attributes as JSON Array.
 
 Usage is quite simple:
 ```javascript
