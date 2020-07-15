@@ -59,7 +59,7 @@ Napi::Object CreateChildObject(Napi::Env env, WIN32_FIND_DATAW *currentChild){
  * @param info
  * @return
  */
-Napi::Object GetChildren(const Napi::CallbackInfo &info){
+Napi::Array GetChildren(const Napi::CallbackInfo &info){
     Napi::Env env = info.Env();
 
     int length = info.Length();
@@ -84,7 +84,7 @@ Napi::Object GetChildren(const Napi::CallbackInfo &info){
         createWindowsError(env, GetLastError(), "GetChildren").ThrowAsJavaScriptException();
     }
 
-    Napi::Object object = Napi::Object::New(env);
+    Napi::Array childrenArray = Napi::Array::New(env);
     int i = 0;
 
     do
@@ -93,7 +93,7 @@ Napi::Object GetChildren(const Napi::CallbackInfo &info){
             continue;
         }
 
-        object[i] = CreateChildObject(env, &wfd);
+        childrenArray[i] = CreateChildObject(env, &wfd);
         i++;
     }
     while(FindNextFileW(hFind, &wfd) != 0);
@@ -107,7 +107,7 @@ Napi::Object GetChildren(const Napi::CallbackInfo &info){
         createWindowsError(env, dwError, "GetChildren").ThrowAsJavaScriptException();
     }
 
-    return object;
+    return childrenArray;
 }
 
 /***
