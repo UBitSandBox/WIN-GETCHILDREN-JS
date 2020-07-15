@@ -1,0 +1,30 @@
+{
+  "name": "win-getchildren-js",
+  "version": "1.0.0",
+  "description": "Function Returning Folder's children with attributes (cf. fs.readdir)",
+  "main": "src/js/addon.js",
+  "gypfile": true,
+  "scripts": {
+    "install": "node-gyp rebuild"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/UBitSandBox/WIN-GETCHILDREN-JS.git"
+  },
+  "author": {
+    "name": "Guillaume Gnaegi",
+    "email": "guillaume.gnaegi@gmail.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/UBitSandBox/WIN-GETCHILDREN-JS/issues"
+  },
+  "homepage": "https://github.com/UBitSandBox/WIN-GETCHILDREN-JS",
+  "dependencies": {
+    "bindings": "^1.5.0",
+    "node-addon-api": "^3.0.0"
+  },
+  "devDependencies": {
+    "node-gyp": "^7.0.0"
+  }
+}
