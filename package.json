@@ -1,6 +1,6 @@
 {
   "name": "win-getchildren-js",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Function Returning Folder's children with attributes (cf. fs.readdir)",
   "main": "src/js/addon.js",
   "gypfile": true,
